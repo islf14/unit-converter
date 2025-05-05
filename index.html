@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Unit Converter</h1>
+    <ul>
+      <li class="active">
+        <a href="#0">Length</a>
+      </li>
+      <li class="">
+        <a href="#0">Weight</a>
+      </li>
+      <li class="">
+        <a href="#0">Temperature</a>
+      </li>
+    </ul>
+
+    <div>
+      <!-- Length -->
+      <div id="page1" style="display: block;" class="container formActive">
+        <form style="display: block;" id="form1">
+          <div>
+            <label for="input1">Enter the length to convert</label>
+            <input class="field" type="number" id="input1">
+          </div>
+          <div>
+            <label for="fr1">Unit to convert from</label>
+            <select class="field" id="fr1">
+              <option value="Millimeter">Millimeter</option>
+              <option value="Centimeter">Centimeter</option>
+              <option value="Kilometer">Kilometer</option>
+              <option value="Inch">Inch</option>
+              <option value="Foot">Foot</option>
+              <option value="Yard">Yard</option>
+              <option value="Mile">Mile</option>
+            </select>
+          </div>
+          <div>
+            <label for="to1">Unit to convert to</label>
+            <select class="field" id="to1">
+              <option value="Millimeter">Millimeter</option>
+              <option value="Centimeter">Centimeter</option>
+              <option value="Kilometer">Kilometer</option>
+              <option value="Inch">Inch</option>
+              <option value="Foot">Foot</option>
+              <option value="Yard">Yard</option>
+              <option value="Mile">Mile</option>
+            </select>
+          </div>
+          <button type="submit">Convert</button>
+          <br>
+          <span class="span">&nbsp;</span>
+        </form>
+
+        <div id="result1" style="display: none;">
+          <p class="pTitle"><strong>Result of your calculation</strong></p>
+          <p class="pResult">
+            <strong>
+              <span>20</span>
+              <span>ft</span>
+              <span>=</span>
+              <span>609</span>
+              <span>cm</span>
+            </strong>
+          </p>
+          <button id="reset1">Reset</button>
+        </div>
+      </div>
+
+      <!-- Weight -->
+      <div id="page2" style="display: none;" class="">
+        <form action="">
+          <div>
+            <label for="iLength">Enter the length to convert</label>
+            <input type="number" id="iLength">
+          </div>
+          <div>
+            <label for="LFrom">Unit to convert from</label>
+            <select name="LFrom" id="LFrom">
+              <option value="Millimeter">Millimeter</option>
+              <option value="Centimeter">Centimeter</option>
+              <option value="Kilometer">Kilometer</option>
+              <option value="Inch">Inch</option>
+              <option value="Foot">Foot</option>
+              <option value="Yard">Yard</option>
+              <option value="Mile">Mile</option>
+            </select>
+          </div>
+          <div>
+            <label for="LTo">Unit to convert to</label>
+            <select name="LTo" id="LTo">
+              <option value="Millimeter">Millimeter</option>
+              <option value="Centimeter">Centimeter</option>
+              <option value="Kilometer">Kilometer</option>
+              <option value="Inch">Inch</option>
+              <option value="Foot">Foot</option>
+              <option value="Yard">Yard</option>
+              <option value="Mile">Mile</option>
+            </select>
+          </div>
+          <button type="submit">Convert</button>
+        </form>
+        <div>
+          <p>Result of your calculation</p>
+          <p>
+            <span>20</span>
+            <span>ft</span>
+            <span>=</span>
+            <span>609</span>
+            <span>cm</span>
+          </p>
+          <button>Reset</button>
+        </div>
+      </div>
+
+      <!-- Temperature -->
+      <div id="page3" style="display: none;" class="">
+        <form action="">
+          <div>
+            <label for="iLength">Enter the length to convert</label>
+            <input type="number" id="iLength">
+          </div>
+          <div>
+            <label for="LFrom">Unit to convert from</label>
+            <select name="LFrom" id="LFrom">
+              <option value="Millimeter">Millimeter</option>
+              <option value="Centimeter">Centimeter</option>
+              <option value="Kilometer">Kilometer</option>
+              <option value="Inch">Inch</option>
+              <option value="Foot">Foot</option>
+              <option value="Yard">Yard</option>
+              <option value="Mile">Mile</option>
+            </select>
+          </div>
+          <div>
+            <label for="LTo">Unit to convert to</label>
+            <select name="LTo" id="LTo">
+              <option value="Millimeter">Millimeter</option>
+              <option value="Centimeter">Centimeter</option>
+              <option value="Kilometer">Kilometer</option>
+              <option value="Inch">Inch</option>
+              <option value="Foot">Foot</option>
+              <option value="Yard">Yard</option>
+              <option value="Mile">Mile</option>
+            </select>
+          </div>
+          <button type="submit">Convert</button>
+        </form>
+        <div>
+          <p>Result of your calculation</p>
+          <p>
+            <span>20</span>
+            <span>ft</span>
+            <span>=</span>
+            <span>609</span>
+            <span>cm</span>
+          </p>
+          <button>Reset</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
