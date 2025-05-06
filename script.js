@@ -9,20 +9,42 @@ const menu3 = $('#menu3')
 
 const page1 = $('#page1')
 const form1 = $('#form1')
-const result1 = $('#result1')
-const span1 = $('#form1 span')
 const input1 = $('#input1')
+const error1 = $('#form1 span')
 const reset1 = $('#reset1')
+const result1 = $('#result1')
+const unitTo1 = $('#unitTo1')
+const unitFrom1 = $('#unitFrom1')
 const lenInpNum = $('#lenInpNum')
 const lenInpSym = $('#lenInpSym')
 const lenResNum = $('#lenResNum')
 const lenResSym = $('#lenResSym')
-const unitFrom1 = $('#unitFrom1')
-const unitTo1 = $('#unitTo1')
 
 const page2 = $('#page2')
+const form2 = $('#form2')
+const input2 = $('#input2')
+const error2 = $('#form2 span')
+const reset2 = $('#reset2')
+const result2 = $('#result2')
+const unitTo2 = $('#unitTo2')
+const unitFrom2 = $('#unitFrom2')
+const weiInpNum = $('#weiInpNum')
+const weiInpSym = $('#weiInpSym')
+const weiResNum = $('#weiResNum')
+const weiResSym = $('#weiResSym')
 
 const page3 = $('#page3')
+const form3 = $('#form3')
+const input3 = $('#input3')
+const error3 = $('#form3 span')
+const reset3 = $('#reset3')
+const result3 = $('#result3')
+const unitTo3 = $('#unitTo3')
+const unitFrom3 = $('#unitFrom3')
+const temInpNum = $('#temInpNum')
+const temInpSym = $('#temInpSym')
+const temResNum = $('#temResNum')
+const temResSym = $('#temResSym')
 
 menuLen.addEventListener('click', (e) => {
   e.preventDefault()
@@ -60,22 +82,25 @@ function myParseFloat (value) {
   return parsedValue
 }
 
-function validateField1 () {
-  const parsedInt = myParseFloat(input1.value)
-  if (parsedInt && unitFrom1.value !== unitTo1.value) {
-    span1.innerText = ''
-    span1.style.color = 'green'
-    return parsedInt
+function validateField (input, unitFrom, unitTo, error) {
+  const parsedFloat = myParseFloat(input.value)
+  if (parsedFloat) {
+    if (unitFrom.value !== unitTo.value) {
+      error.innerText = ''
+      return parsedFloat
+    } else {
+      error.innerText = 'Select the unit to convert.'
+      return false
+    }
   } else {
-    span1.innerText = 'Complete the field and choose the unit.'
-    span1.style.color = 'red'
+    error.innerText = 'Complete the field.'
     return false
   }
 }
 
 form1.addEventListener('submit', (e) => {
   e.preventDefault()
-  const value = validateField1()
+  const value = validateField(input1, unitFrom1, unitTo1, error1)
   if (value) {
     const result = convertLength(value)
 
@@ -93,6 +118,50 @@ form1.addEventListener('submit', (e) => {
 reset1.addEventListener('click', (e) => {
   result1.style.display = 'none'
   form1.style.display = 'block'
+})
+
+form2.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const value = validateField(input2, unitFrom2, unitTo2, error2)
+  if (value) {
+    const result = convertWeight(value)
+
+    input2.value = value
+    weiInpNum.innerText = value
+    weiInpSym.innerText = unitFrom2.value
+    weiResNum.innerText = result
+    weiResSym.innerText = unitTo2.value
+
+    result2.style.display = 'block'
+    form2.style.display = 'none'
+  }
+})
+
+reset2.addEventListener('click', (e) => {
+  result2.style.display = 'none'
+  form2.style.display = 'block'
+})
+
+form3.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const value = validateField(input3, unitFrom3, unitTo3, error3)
+  if (value) {
+    const result = convertTemperature(value)
+
+    input3.value = value
+    temInpNum.innerText = value
+    temInpSym.innerText = unitFrom3.value
+    temResNum.innerText = result
+    temResSym.innerText = unitTo3.value
+
+    result3.style.display = 'block'
+    form3.style.display = 'none'
+  }
+})
+
+reset3.addEventListener('click', (e) => {
+  result3.style.display = 'none'
+  form3.style.display = 'block'
 })
 
 // 1 in = 0.0254 m
@@ -259,6 +328,110 @@ function convertLength (input) {
           return input * 5280 // 1 mi = 5280 ft
         case 'yd':
           return input * 1760 // 1 mi = 1760 yd
+      }
+      break
+  }
+}
+
+// 1 g = 0.03527396195 oz
+// 1 lb = 453.592369999995 g
+// 1 lb = 16 oz
+
+function convertWeight (input) {
+  switch (unitFrom2.value) {
+    case 'mg':
+      switch (unitTo2.value) {
+        case 'g':
+          return input / 1000
+        case 'kg':
+          return input / 1000000
+        case 'oz':
+          return input * 0.00003527396195 // 1 g = 0.03527396195 oz
+        case 'lb':
+          return input / 453592.369999995 // 1 lb = 453.592369999995 g
+      }
+      break
+    case 'g':
+      switch (unitTo2.value) {
+        case 'mg':
+          return input * 1000
+        case 'kg':
+          return input / 1000
+        case 'oz':
+          return input * 0.03527396195 // 1 g = 0.03527396195 oz
+        case 'lb':
+          return input / 453.592369999995 // 1 lb = 453.592369999995 g
+      }
+      break
+
+    case 'kg':
+      switch (unitTo2.value) {
+        case 'mg':
+          return input * 1000000
+        case 'g':
+          return input * 1000
+        case 'oz':
+          return input * 35.27396195 // 1 g = 0.03527396195 oz
+        case 'lb':
+          return input / 0.453592369999995 // 1 lb = 453.592369999995 g
+      }
+      break
+
+    case 'oz': // 1 g = 0.03527396195 oz
+      switch (unitTo2.value) {
+        case 'mg':
+          return input / 0.00003527396195
+        case 'g':
+          return input / 0.03527396195
+        case 'kg':
+          return input / 35.27396195
+        case 'lb':
+          return input / 16 // 1 lb = 16 oz
+      }
+      break
+    case 'lb': // 1 lb = 453.592369999995 g
+      switch (unitTo2.value) {
+        case 'mg':
+          return input * 453592.369999995
+        case 'g':
+          return input * 453.592369999995
+        case 'kg':
+          return input * 0.453592369999995
+        case 'oz':
+          return input * 16 // 1 lb = 16 oz
+      }
+      break
+  }
+}
+
+// °F = °C * 1.8 + 32
+// K = °C + 273.15
+// °F = K * 1.8 - 459.67
+
+function convertTemperature (input) {
+  switch (unitFrom3.value) {
+    case '°C':
+      switch (unitTo3.value) {
+        case '°F':
+          return (input * 1.8) + 32
+        case 'K':
+          return input + 273.15
+      }
+      break
+    case '°F':
+      switch (unitTo3.value) {
+        case '°C':
+          return (input - 32) / 1.8
+        case 'K':
+          return (input + 459.67) / 1.8
+      }
+      break
+    case 'K':
+      switch (unitTo3.value) {
+        case '°C':
+          return input - 273.15
+        case '°F':
+          return input * 1.8 - 459.67
       }
       break
   }

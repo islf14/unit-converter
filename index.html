@@ -32,7 +32,7 @@
             <input class="field" type="text" id="input1">
           </div>
           <div>
-            <label for="fr1">Unit to convert from</label>
+            <label for="unitFrom1">Unit to convert from</label>
             <select class="field" id="unitFrom1">
               <option value="mm">Millimeter (mm)</option>
               <option value="cm">Centimeter (cm)</option>
@@ -45,7 +45,7 @@
             </select>
           </div>
           <div>
-            <label for="to1">Unit to convert to</label>
+            <label for="unitTo1">Unit to convert to</label>
             <select class="field" id="unitTo1">
               <option value="mm">Millimeter (mm)</option>
               <option value="cm">Centimeter (cm)</option>
@@ -79,93 +79,89 @@
 
       <!-- Weight -->
       <div id="page2" style="display: none;" class="container">
-        <form action="">
+        <form style="display: block;" id="form2">
           <div>
-            <label for="iLength">Enter the length to convert</label>
-            <input type="number" id="iLength">
+            <label for="input2">Enter the weight to convert</label>
+            <input class="field" type="text" id="input2">
           </div>
           <div>
-            <label for="LFrom">Unit to convert from</label>
-            <select name="LFrom" id="LFrom">
-              <option value="Millimeter">Millimeter</option>
-              <option value="Centimeter">Centimeter</option>
-              <option value="Kilometer">Kilometer</option>
-              <option value="Inch">Inch</option>
-              <option value="Foot">Foot</option>
-              <option value="Yard">Yard</option>
-              <option value="Mile">Mile</option>
+            <label for="unitFrom2">Unit to convert from</label>
+            <select class="field" id="unitFrom2">
+              <option value="mg">Milligram (mg)</option>
+              <option value="g">Gram (g)</option>
+              <option value="kg">Kilogram (kg)</option>
+              <option value="oz">Ounce (oz)</option>
+              <option value="lb">Pound (lb)</option>
             </select>
           </div>
           <div>
-            <label for="LTo">Unit to convert to</label>
-            <select name="LTo" id="LTo">
-              <option value="Millimeter">Millimeter</option>
-              <option value="Centimeter">Centimeter</option>
-              <option value="Kilometer">Kilometer</option>
-              <option value="Inch">Inch</option>
-              <option value="Foot">Foot</option>
-              <option value="Yard">Yard</option>
-              <option value="Mile">Mile</option>
+            <label for="unitTo2">Unit to convert to</label>
+            <select class="field" id="unitTo2">
+              <option value="mg">Milligram (mg)</option>
+              <option value="g">Gram (g)</option>
+              <option value="kg">Kilogram (kg)</option>
+              <option value="oz">Ounce (oz)</option>
+              <option value="lb">Pound (lb)</option>
             </select>
           </div>
           <button type="submit">Convert</button>
+          <br>
+          <span class="span">&nbsp;</span>
         </form>
-        <div>
-          <p>Result of your calculation</p>
-          <p>
-            <span>20</span>
-            <span>ft</span>
-            <span>=</span>
-            <span>609</span>
-            <span>cm</span>
+        <div id="result2" style="display: none;">
+          <p class="pTitle"><strong>Result of your calculation</strong></p>
+          <p class="pResult">
+            <strong>
+              <span id="weiInpNum">20</span>
+              <span id="weiInpSym">mg</span>
+              <span>=</span>
+              <span id="weiResNum">609</span>
+              <span id="weiResSym">g</span>
+            </strong>
           </p>
-          <button>Reset</button>
+          <button id="reset2">Reset</button>
         </div>
       </div>
 
       <!-- Temperature -->
-      <div id="page3" style="display: none;" class="">
-        <form action="">
+      <div id="page3" style="display: none;" class="container">
+        <form style="display: block;" id="form3">
           <div>
-            <label for="iLength">Enter the length to convert</label>
-            <input type="number" id="iLength">
+            <label for="input3">Enter the temperature to convert</label>
+            <input class="field" type="text" id="input3">
           </div>
           <div>
-            <label for="LFrom">Unit to convert from</label>
-            <select name="LFrom" id="LFrom">
-              <option value="Millimeter">Millimeter</option>
-              <option value="Centimeter">Centimeter</option>
-              <option value="Kilometer">Kilometer</option>
-              <option value="Inch">Inch</option>
-              <option value="Foot">Foot</option>
-              <option value="Yard">Yard</option>
-              <option value="Mile">Mile</option>
+            <label for="unitFrom3">Unit to convert from</label>
+            <select class="field" id="unitFrom3">
+              <option value="°C">Celsius (°C)</option>
+              <option value="°F">Fahrenheit (°F)</option>
+              <option value="K">Kelvin (K)</option>
             </select>
           </div>
           <div>
-            <label for="LTo">Unit to convert to</label>
-            <select name="LTo" id="LTo">
-              <option value="Millimeter">Millimeter</option>
-              <option value="Centimeter">Centimeter</option>
-              <option value="Kilometer">Kilometer</option>
-              <option value="Inch">Inch</option>
-              <option value="Foot">Foot</option>
-              <option value="Yard">Yard</option>
-              <option value="Mile">Mile</option>
+            <label for="unitTo3">Unit to convert to</label>
+            <select class="field" id="unitTo3">
+              <option value="°C">Celsius (°C)</option>
+              <option value="°F">Fahrenheit (°F)</option>
+              <option value="K">Kelvin (K)</option>
             </select>
           </div>
           <button type="submit">Convert</button>
+          <br>
+          <span class="span">&nbsp;</span>
         </form>
-        <div>
-          <p>Result of your calculation</p>
-          <p>
-            <span>20</span>
-            <span>ft</span>
-            <span>=</span>
-            <span>609</span>
-            <span>cm</span>
+        <div id="result3" style="display: none;">
+          <p class="pTitle"><strong>Result of your calculation</strong></p>
+          <p class="pResult">
+            <strong>
+              <span id="temInpNum">20</span>
+              <span id="temInpSym">°C</span>
+              <span>=</span>
+              <span id="temResNum">60</span>
+              <span id="temResSym">°F</span>
+            </strong>
           </p>
-          <button>Reset</button>
+          <button id="reset3">Reset</button>
         </div>
       </div>
 
