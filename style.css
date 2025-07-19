@@ -9,7 +9,7 @@ main {
   margin: 1.5em auto;
   font-size: 1.1em;
   border: 1px solid #000;
-  border-radius: .5em;
+  border-radius: 0.5em;
   padding: 1em;
 }
 
@@ -24,7 +24,7 @@ ul {
 }
 
 li {
-  padding: .3em .3em;
+  padding: 0.3em 0.3em;
   margin-right: 4px;
 }
 
@@ -33,7 +33,7 @@ a {
   position: relative;
   text-decoration: none;
   display: block;
-  padding: .2em 0;
+  padding: 0.2em 0;
   overflow: hidden;
 }
 
@@ -50,11 +50,11 @@ a::after {
   transform: translate3d(-100%, 0, 0);
 }
 
-.active>a {
+.active > a {
   color: blue;
 }
 
-.active>a::after {
+.active > a::after {
   transform: translate3d(0, 0, 0);
 }
 
@@ -65,7 +65,7 @@ a:focus::after {
 
 .container {
   /* background-color: aqua; */
-  padding: .7em;
+  padding: 0.7em;
 }
 
 label {
@@ -75,12 +75,12 @@ label {
 
 input {
   width: 94%;
-  font-size: .8em;
-  padding: 0 .5em;
+  font-size: 0.8em;
+  padding: 0 0.5em;
 }
 
 .field {
-  border-radius: .5em;
+  border-radius: 0.5em;
   border: 1px solid #000;
   height: 2em;
   margin-bottom: 17px;
@@ -88,16 +88,16 @@ input {
 }
 
 select {
-  font-size: .8em;
+  font-size: 0.8em;
   width: 100%;
-  padding: .25em;
+  padding: 0.25em;
 }
 
 button {
-  border-radius: .5em;
+  border-radius: 0.5em;
   border: 1px solid #000;
-  font-size: .8em;
-  padding: .5em;
+  font-size: 0.8em;
+  padding: 0.5em;
   width: 8em;
   font-family: cursive;
   background-color: rgb(235, 245, 255);
@@ -116,6 +116,6 @@ button:hover {
 }
 
 .span {
-  font-size: .8em;
+  font-size: 0.8em;
   color: red;
 }

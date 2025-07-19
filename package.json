@@ -9,11 +9,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "standard": "^17.1.2"
-  },
-  "eslintConfig": {
-    "extends": "standard"
-  }
+  "license": "ISC"
 }
